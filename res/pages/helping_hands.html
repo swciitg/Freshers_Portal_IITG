@@ -1,0 +1,1446 @@
+<style>
+@media (min-width: 1200px){
+.gymkhana {
+  width: 800px;
+}
+input[type=text] {
+    width: 25%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('res/images/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+	-webkit-transition: width .35s ease-in-out;
+  transition: width .35s ease-in-out;
+}
+input[type=text]:focus {
+  width: 50%;
+}
+}
+.gymkhana {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+ background-color:white;
+ border-radius:10px;
+   box-shadow: 0 3px 3px #C2C2C2, 3px 0px 3px #C2C2C2, -3px 0px 3px #C2C2C2;
+}
+@media (max-width: 767px){
+input[type=text] {
+    width: 75%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('res/images/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+	-webkit-transition: width .35s ease-in-out;
+  transition: width .35s ease-in-out;
+}
+input[type=text]:focus {
+  width: 100%;
+}
+}
+@media (min-width: 768px){
+.gymkhana {
+  width: 750px;
+}
+input[type=text] {
+    width: 50%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('res/images/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+	-webkit-transition: width .35s ease-in-out;
+  transition: width .35s ease-in-out;
+}
+input[type=text]:focus {
+  width: 75%;
+}
+}
+@media (min-width: 992px){
+.gymkhana {
+  width: 1200px;
+
+}
+h2 {
+  padding: 10px;
+  margin: 20px;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 1px #fff;
+  color: #333;
+  background: transparent url(http://tympanus.net/Tutorials/RotatingImageSlider/images/line.png) repeat-x bottom left;
+}
+h1{
+border-bottom: 1px dotted #E0E0E0;
+margin:0%;
+margin-left:20px;
+ font-family: 'Oswald', sans-serif;
+ font-weight:100;
+ font-size:26px;
+ color:#1bba9c;
+}
+p{
+ font-family: 'Oswald', sans-serif;
+ padding:20px;
+ text-align:justify;
+ }
+ input[type=text] {
+    width: 25%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('res/images/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+	-webkit-transition: width .35s ease-in-out;
+  transition: width .35s ease-in-out;
+}
+input[type=text]:focus {
+  width: 50%;
+}
+ }
+table { 
+color: #333;
+font-family: Helvetica, Arial, sans-serif;
+width: 100%; 
+border-collapse: 
+collapse; border-spacing: 0; 
+}
+
+td, th { 
+border: 1px solid transparent; /* No more visible border */
+height: 30px; 
+transition: all 0.3s;  /* Simple transition for hover effect */
+}
+
+th {
+background: #DFDFDF;  /* Darken header a bit */
+font-weight: bold;
+}
+
+td {
+background: #FAFAFA;
+text-align: left;
+}
+
+/* Cells in even rows (2,4,6...) are one color */ 
+tr:nth-child(even) td { background: #F1F1F1; }   
+
+/* Cells in odd rows (1,3,5...) are another (excludes header cells)  */ 
+tr:nth-child(odd) td { background: #FEFEFE; }  
+
+tr td:hover { background: #666; color: #FFF; } /* Hover cell effect! */
+</style>
+<script type="text/javascript" src="http://code.jquery.com/jquery-git.js"></script>
+<script type='text/javascript'>//<![CDATA[
+$(window).on('load', function() {
+           
+    // Write on keyup event of keyword input element
+    $("#search").keyup(function(){
+        _this = this;
+        // Show only matching TR, hide rest of them
+        $.each($("#table tbody tr"), function() {
+            if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
+               $(this).hide();
+            else
+               $(this).show();                
+        });
+    }); 
+
+});//]]> 
+
+</script>
+<section id="feature" >
+    <div class="gymkhana">
+        <div class="center wow fadeInDown" style="margin-bottom:0%;padding-bottom:20px;padding-top:20px;width:50%;margin:auto;min-width:240px;">
+           <img src="res/images/headings/helping_hands.png" alt="Departments" width="100%" height="80" align="center"> 
+        </div> 
+		<div class="wow fadeInDown" style="visibility: visible; animation-name: fadeInDown; -webkit-animation-name: fadeInDown;margin-bottom:0%;padding-bottom:20px;">
+                <input type="text" id="search" placeholder="Type to search..." /><br></br>
+				<table cellspacing=0 border=1 data-role="table" class="ui-responsive ui-shadow" id="table">
+				<thead>
+                    <tr>
+                        <th style=min-width:50px>State</th>
+                        <th style=min-width:50px>City of Origin</th>
+                        <th style=min-width:50px>Name</th>
+                        <th style=min-width:50px>Contact</th>
+                        <th style=min-width:50px>Department</th>
+                        <th style=min-width:50px>Program</th>
+                        <th style=min-width:50px>Year of Study</th>
+                    </tr>
+				</thead>
+				<tbody>
+                    <tr>
+                        <td style=min-width:50px>Andhra Pradesh</td>
+                        <td style=min-width:50px>Hyderabad</td>
+                        <td style=min-width:50px>Harsha Vardhan</td>
+                        <td style=min-width:50px>9954249931</td>
+                        <td style=min-width:50px>Computer Science and Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Andhra Pradesh</td>
+                        <td style=min-width:50px>Visakhapatnam</td>
+                        <td style=min-width:50px>Sai Bhaskar Devatha </td>
+                        <td style=min-width:50px>7416496495</td>
+                        <td style=min-width:50px>Electronics and Electrical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Andhra Pradesh</td>
+                        <td style=min-width:50px>Visakhapatnam</td>
+                        <td style=min-width:50px>Preetham Kamidi</td>
+                        <td style=min-width:50px>8011035957</td>
+                        <td style=min-width:50px>Computer Science and Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Andhra Pradesh</td>
+                        <td style=min-width:50px>Kadapa</td>
+                        <td style=min-width:50px>Siva Sachin</td>
+                        <td style=min-width:50px>9085743980</td>
+                        <td style=min-width:50px>Civil Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Andhra Pradesh</td>
+                        <td style=min-width:50px>Rajahmundry</td>
+                        <td style=min-width:50px>Chandra Sekhar Ajay A</td>
+                        <td style=min-width:50px>8500466405</td>
+                        <td style=min-width:50px>Chemical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Andhra Pradesh</td>
+                        <td style=min-width:50px>hyderabad</td>
+                        <td style=min-width:50px>ram santhosh reddy</td>
+                        <td style=min-width:50px>8011021816</td>
+                        <td style=min-width:50px>Mechanical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Andhra Pradesh</td>
+                        <td style=min-width:50px>Hyderabad</td>
+                        <td style=min-width:50px>Sushumna</td>
+                        <td style=min-width:50px>7086483458</td>
+                        <td style=min-width:50px>Civil Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Andhra Pradesh</td>
+                        <td style=min-width:50px>Visakhapatnam / Vizianagaram</td>
+                        <td style=min-width:50px>George</td>
+                        <td style=min-width:50px>7013003460</td>
+                        <td style=min-width:50px>Computer Science and Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Andhra Pradesh</td>
+                        <td style=min-width:50px>Karimnagar</td>
+                        <td style=min-width:50px>Manu Tej Sharma</td>
+                        <td style=min-width:50px>8486723184</td>
+                        <td style=min-width:50px>Biosciences and Bioengineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Andhra Pradesh</td>
+                        <td style=min-width:50px>Andhra Pradesh</td>
+                        <td style=min-width:50px>Swaroopa Rani Dasari</td>
+                        <td style=min-width:50px>8011200208</td>
+                        <td style=min-width:50px>Chemical Engineering</td>
+                        <td style=min-width:50px>M. A. / M. Des. / M. Tech. / M. Sc.</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Andhra Pradesh</td>
+                        <td style=min-width:50px>Eluru</td>
+                        <td style=min-width:50px>Aakhil</td>
+                        <td style=min-width:50px>7086867361</td>
+                        <td style=min-width:50px>Electronics and Electrical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Andhra Pradesh</td>
+                        <td style=min-width:50px>warangal</td>
+                        <td style=min-width:50px>p. karthikeya</td>
+                        <td style=min-width:50px>8011035573</td>
+                        <td style=min-width:50px>Mechanical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Andhra Pradesh</td>
+                        <td style=min-width:50px>Rajahmundry</td>
+                        <td style=min-width:50px>Hari Peravali</td>
+                        <td style=min-width:50px>9085671234</td>
+                        <td style=min-width:50px>Electronics and Electrical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Andhra Pradesh</td>
+                        <td style=min-width:50px>Vizag</td>
+                        <td style=min-width:50px>konathalaashok</td>
+                        <td style=min-width:50px>9494189732</td>
+                        <td style=min-width:50px>Chemical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Andhra Pradesh</td>
+                        <td style=min-width:50px>GUNTAKAL </td>
+                        <td style=min-width:50px>V. WILSON RAJU</td>
+                        <td style=min-width:50px>9954250525</td>
+                        <td style=min-width:50px>Civil Engineering</td>
+                        <td style=min-width:50px>M. A. / M. Des. / M. Tech. / M. Sc.</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Andhra Pradesh</td>
+                        <td style=min-width:50px>KHAMMAM</td>
+                        <td style=min-width:50px>RAHUL</td>
+                        <td style=min-width:50px>8011492005</td>
+                        <td style=min-width:50px>Civil Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Andhra Pradesh</td>
+                        <td style=min-width:50px>Visakhapatnam</td>
+                        <td style=min-width:50px>Sasank Gurajapu</td>
+                        <td style=min-width:50px>9492238298</td>
+                        <td style=min-width:50px>Electronics and Electrical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Andhra Pradesh</td>
+                        <td style=min-width:50px>Kurnool</td>
+                        <td style=min-width:50px>Venu Gopal</td>
+                        <td style=min-width:50px>9706607554</td>
+                        <td style=min-width:50px>Design</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Andhra Pradesh</td>
+                        <td style=min-width:50px>Hanamkonda, Warangal</td>
+                        <td style=min-width:50px>Aditya Komandla</td>
+                        <td style=min-width:50px>7896892168</td>
+                        <td style=min-width:50px>Electronics and Electrical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Andhra Pradesh</td>
+                        <td style=min-width:50px>Hyderabad</td>
+                        <td style=min-width:50px>Rahul Kande</td>
+                        <td style=min-width:50px>8011036864</td>
+                        <td style=min-width:50px>Electronics and Electrical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Andhra Pradesh</td>
+                        <td style=min-width:50px>Kurnool</td>
+                        <td style=min-width:50px>Charan</td>
+                        <td style=min-width:50px>7896517768</td>
+                        <td style=min-width:50px>Electronics and Electrical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Assam</td>
+                        <td style=min-width:50px>Nagaon</td>
+                        <td style=min-width:50px>Arindam Kalita</td>
+                        <td style=min-width:50px>9678522548</td>
+                        <td style=min-width:50px>Mechanical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Assam</td>
+                        <td style=min-width:50px>Guwahati</td>
+                        <td style=min-width:50px>Pingal Kakati</td>
+                        <td style=min-width:50px>9678755120</td>
+                        <td style=min-width:50px>Design</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Assam</td>
+                        <td style=min-width:50px>Guwahati</td>
+                        <td style=min-width:50px>Abhinav Bhuyan</td>
+                        <td style=min-width:50px>8723021626</td>
+                        <td style=min-width:50px>Physics</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Assam</td>
+                        <td style=min-width:50px>Guwahati</td>
+                        <td style=min-width:50px>Krishna Rohila</td>
+                        <td style=min-width:50px>9707853921</td>
+                        <td style=min-width:50px>Computer Science and Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Assam</td>
+                        <td style=min-width:50px>Guwahati</td>
+                        <td style=min-width:50px>Aneesh Barthakur</td>
+                        <td style=min-width:50px>8811035321</td>
+                        <td style=min-width:50px>Computer Science and Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Bihar</td>
+                        <td style=min-width:50px>Motihari</td>
+                        <td style=min-width:50px>Divyanshu Mishra</td>
+                        <td style=min-width:50px>8285255952</td>
+                        <td style=min-width:50px>Mechanical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Bihar</td>
+                        <td style=min-width:50px>Patna</td>
+                        <td style=min-width:50px>Avikshit Pratap</td>
+                        <td style=min-width:50px>8011021677</td>
+                        <td style=min-width:50px>Mechanical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Bihar</td>
+                        <td style=min-width:50px>Samastipur</td>
+                        <td style=min-width:50px>Saurabh Agrawal</td>
+                        <td style=min-width:50px>8822923853</td>
+                        <td style=min-width:50px>Mathematics</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Bihar</td>
+                        <td style=min-width:50px>Gopalganj</td>
+                        <td style=min-width:50px>Birpratap kumar singh </td>
+                        <td style=min-width:50px>8011026674</td>
+                        <td style=min-width:50px>Mechanical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Bihar</td>
+                        <td style=min-width:50px>Sitamarhi </td>
+                        <td style=min-width:50px>MAYANK</td>
+                        <td style=min-width:50px>8011491929</td>
+                        <td style=min-width:50px>Mechanical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Bihar</td>
+                        <td style=min-width:50px>Begusarai </td>
+                        <td style=min-width:50px>Vishnu Vishal </td>
+                        <td style=min-width:50px>7896879738</td>
+                        <td style=min-width:50px>Mechanical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Bihar</td>
+                        <td style=min-width:50px>Gaya</td>
+                        <td style=min-width:50px>Piyush Jain</td>
+                        <td style=min-width:50px>9954248511</td>
+                        <td style=min-width:50px>Computer Science and Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Chhattisgarh</td>
+                        <td style=min-width:50px>Raipur</td>
+                        <td style=min-width:50px>Saurabh Ahirwar</td>
+                        <td style=min-width:50px>9706624551</td>
+                        <td style=min-width:50px>Chemistry</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Chhattisgarh</td>
+                        <td style=min-width:50px>bilaspur</td>
+                        <td style=min-width:50px>Ashish Agrawal</td>
+                        <td style=min-width:50px>9893098215</td>
+                        <td style=min-width:50px>Chemical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Chhattisgarh</td>
+                        <td style=min-width:50px>Raipur</td>
+                        <td style=min-width:50px>Shubham Meshram</td>
+                        <td style=min-width:50px>7896890651</td>
+                        <td style=min-width:50px>Chemical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Delhi</td>
+                        <td style=min-width:50px>New Delhi</td>
+                        <td style=min-width:50px>Sahil Manchanda</td>
+                        <td style=min-width:50px>9654040804</td>
+                        <td style=min-width:50px>Computer Science and Engineering</td>
+                        <td style=min-width:50px>M. A. / M. Des. / M. Tech. / M. Sc.</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Delhi</td>
+                        <td style=min-width:50px>Delhi</td>
+                        <td style=min-width:50px>Abhishek Agrawal</td>
+                        <td style=min-width:50px>8724046567</td>
+                        <td style=min-width:50px>Electronics and Electrical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Delhi</td>
+                        <td style=min-width:50px>Delhi</td>
+                        <td style=min-width:50px>Priyanshu Chandra</td>
+                        <td style=min-width:50px>8011034048</td>
+                        <td style=min-width:50px>Mathematics</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Delhi</td>
+                        <td style=min-width:50px>New Delhi</td>
+                        <td style=min-width:50px>Sagar Manchanda</td>
+                        <td style=min-width:50px>9811997833</td>
+                        <td style=min-width:50px>Computer Science and Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Delhi</td>
+                        <td style=min-width:50px>Delhi</td>
+                        <td style=min-width:50px>Aditya Prabhu</td>
+                        <td style=min-width:50px>8011023788</td>
+                        <td style=min-width:50px>Mathematics</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Delhi</td>
+                        <td style=min-width:50px>Delhi</td>
+                        <td style=min-width:50px>Aarrushi Shandilya</td>
+                        <td style=min-width:50px>9810770734</td>
+                        <td style=min-width:50px>Electronics and Electrical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Delhi</td>
+                        <td style=min-width:50px>Delhi</td>
+                        <td style=min-width:50px>Shreeyansh Rastogi</td>
+                        <td style=min-width:50px>8721950594</td>
+                        <td style=min-width:50px>Chemical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Delhi</td>
+                        <td style=min-width:50px>New Delhi/Tamil Nadu</td>
+                        <td style=min-width:50px>Venkat Arun</td>
+                        <td style=min-width:50px>8486983567</td>
+                        <td style=min-width:50px>Computer Science and Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Delhi</td>
+                        <td style=min-width:50px></td>
+                        <td style=min-width:50px>Komal jain</td>
+                        <td style=min-width:50px>8377873520</td>
+                        <td style=min-width:50px>Chemistry</td>
+                        <td style=min-width:50px>M. A. / M. Des. / M. Tech. / M. Sc.</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Gujarat</td>
+                        <td style=min-width:50px>Adipur</td>
+                        <td style=min-width:50px>Urmil</td>
+                        <td style=min-width:50px>9435662359</td>
+                        <td style=min-width:50px>Biosciences and Bioengineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Gujarat</td>
+                        <td style=min-width:50px>Surat</td>
+                        <td style=min-width:50px>Lokesh Fulfagar</td>
+                        <td style=min-width:50px>7086073008</td>
+                        <td style=min-width:50px>Civil Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Gujarat</td>
+                        <td style=min-width:50px>Ahmedabad</td>
+                        <td style=min-width:50px>Zankar Savalia</td>
+                        <td style=min-width:50px>9099833008</td>
+                        <td style=min-width:50px>Design</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Haryana</td>
+                        <td style=min-width:50px>Haryana</td>
+                        <td style=min-width:50px>Badrinath Singhal</td>
+                        <td style=min-width:50px>8486508149</td>
+                        <td style=min-width:50px>Electronics and Electrical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Haryana</td>
+                        <td style=min-width:50px>Gurgaon</td>
+                        <td style=min-width:50px>Utkarsh Kumar</td>
+                        <td style=min-width:50px>8011021820</td>
+                        <td style=min-width:50px>Chemical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Haryana</td>
+                        <td style=min-width:50px>Hisar</td>
+                        <td style=min-width:50px>Shiv Kumar</td>
+                        <td style=min-width:50px>9466133672</td>
+                        <td style=min-width:50px>Chemical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Haryana</td>
+                        <td style=min-width:50px>Gurgaon</td>
+                        <td style=min-width:50px>Anup Agarwal</td>
+                        <td style=min-width:50px>9711794321</td>
+                        <td style=min-width:50px>Computer Science and Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Haryana</td>
+                        <td style=min-width:50px>Narnaul</td>
+                        <td style=min-width:50px>Praveen Kumar</td>
+                        <td style=min-width:50px>9085969795</td>
+                        <td style=min-width:50px>Physics</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Haryana</td>
+                        <td style=min-width:50px>Sonepat</td>
+                        <td style=min-width:50px>Sachin malik</td>
+                        <td style=min-width:50px>9085981005</td>
+                        <td style=min-width:50px>Civil Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Haryana</td>
+                        <td style=min-width:50px>Sonepat</td>
+                        <td style=min-width:50px>Sachin malik</td>
+                        <td style=min-width:50px>9085981005</td>
+                        <td style=min-width:50px>Civil Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Jharkhand</td>
+                        <td style=min-width:50px>Ranchi</td>
+                        <td style=min-width:50px>Abhinav Anand</td>
+                        <td style=min-width:50px>9678440154</td>
+                        <td style=min-width:50px>Electronics and Electrical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Karnataka</td>
+                        <td style=min-width:50px>Bangalore</td>
+                        <td style=min-width:50px>Walter</td>
+                        <td style=min-width:50px>8724071620</td>
+                        <td style=min-width:50px>Civil Engineering</td>
+                        <td style=min-width:50px>M. A. / M. Des. / M. Tech. / M. Sc.</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Karnataka</td>
+                        <td style=min-width:50px>Mangalore</td>
+                        <td style=min-width:50px>Bharath Rao</td>
+                        <td style=min-width:50px>7411659612</td>
+                        <td style=min-width:50px>Electronics and Electrical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Karnataka</td>
+                        <td style=min-width:50px>Bangalore</td>
+                        <td style=min-width:50px>Nikhil</td>
+                        <td style=min-width:50px>7576918952</td>
+                        <td style=min-width:50px>Electronics and Electrical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Karnataka</td>
+                        <td style=min-width:50px>Banglore/Hyderabad</td>
+                        <td style=min-width:50px>Abhishek Raj </td>
+                        <td style=min-width:50px>7896257801</td>
+                        <td style=min-width:50px>Mechanical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Karnataka</td>
+                        <td style=min-width:50px>Bangalore</td>
+                        <td style=min-width:50px>N Hariharan</td>
+                        <td style=min-width:50px>8011494202</td>
+                        <td style=min-width:50px>Electronics and Electrical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Kerala</td>
+                        <td style=min-width:50px></td>
+                        <td style=min-width:50px>Rishi Sreedhar</td>
+                        <td style=min-width:50px>8011026467</td>
+                        <td style=min-width:50px>Electronics and Electrical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Madhya Pradesh</td>
+                        <td style=min-width:50px>Morena</td>
+                        <td style=min-width:50px>Anand Sharma</td>
+                        <td style=min-width:50px>8721915588</td>
+                        <td style=min-width:50px>Biosciences and Bioengineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Madhya Pradesh</td>
+                        <td style=min-width:50px>Ujjain</td>
+                        <td style=min-width:50px>Prabal Jain</td>
+                        <td style=min-width:50px>8472058086</td>
+                        <td style=min-width:50px>Chemical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Madhya Pradesh</td>
+                        <td style=min-width:50px>Badwani</td>
+                        <td style=min-width:50px>Sumit rathore</td>
+                        <td style=min-width:50px>9954215389</td>
+                        <td style=min-width:50px>Design</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Madhya Pradesh</td>
+                        <td style=min-width:50px>Gwalior</td>
+                        <td style=min-width:50px>Shubham Pippal</td>
+                        <td style=min-width:50px>7896889153</td>
+                        <td style=min-width:50px>Mechanical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Madhya Pradesh</td>
+                        <td style=min-width:50px>Indore</td>
+                        <td style=min-width:50px>Rupal Saxena</td>
+                        <td style=min-width:50px>7086867391</td>
+                        <td style=min-width:50px>Chemistry</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Madhya Pradesh</td>
+                        <td style=min-width:50px>Indore </td>
+                        <td style=min-width:50px>Ankur Pandey</td>
+                        <td style=min-width:50px>8723831574</td>
+                        <td style=min-width:50px>Chemical Engineering</td>
+                        <td style=min-width:50px>M. A. / M. Des. / M. Tech. / M. Sc.</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Madhya Pradesh</td>
+                        <td style=min-width:50px>Indore</td>
+                        <td style=min-width:50px>Apoorv Nandan</td>
+                        <td style=min-width:50px>8011034702</td>
+                        <td style=min-width:50px>Mathematics</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Madhya Pradesh</td>
+                        <td style=min-width:50px>Jabalpur</td>
+                        <td style=min-width:50px>Ayush Yadav</td>
+                        <td style=min-width:50px>9479634671</td>
+                        <td style=min-width:50px>Electronics and Electrical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Maharashtra</td>
+                        <td style=min-width:50px>Pune</td>
+                        <td style=min-width:50px>Shreyas Kulkarni</td>
+                        <td style=min-width:50px>8473842329</td>
+                        <td style=min-width:50px>Physics</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Maharashtra</td>
+                        <td style=min-width:50px>Pune</td>
+                        <td style=min-width:50px>Manasi Sant</td>
+                        <td style=min-width:50px>7086867380</td>
+                        <td style=min-width:50px>Computer Science and Engineering</td>
+                        <td style=min-width:50px>M. A. / M. Des. / M. Tech. / M. Sc.</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Maharashtra</td>
+                        <td style=min-width:50px>Nashik</td>
+                        <td style=min-width:50px>Sujay Vijay Jadhav</td>
+                        <td style=min-width:50px>8721851585</td>
+                        <td style=min-width:50px>Physics</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Maharashtra</td>
+                        <td style=min-width:50px>pune</td>
+                        <td style=min-width:50px>Sudarshan kamath</td>
+                        <td style=min-width:50px>7664824224</td>
+                        <td style=min-width:50px>Mechanical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Maharashtra</td>
+                        <td style=min-width:50px>Pune</td>
+                        <td style=min-width:50px>Parth Pawar</td>
+                        <td style=min-width:50px>9850551771</td>
+                        <td style=min-width:50px>Electronics and Electrical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Maharashtra</td>
+                        <td style=min-width:50px>Gondia </td>
+                        <td style=min-width:50px>Ujwal Gajbe</td>
+                        <td style=min-width:50px>9403241090</td>
+                        <td style=min-width:50px>Mechanical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Maharashtra</td>
+                        <td style=min-width:50px>Bhandara</td>
+                        <td style=min-width:50px>Panchashil Khobragade</td>
+                        <td style=min-width:50px>9085294370</td>
+                        <td style=min-width:50px>Chemical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Maharashtra</td>
+                        <td style=min-width:50px>Pune</td>
+                        <td style=min-width:50px>Ashutosh Sharma</td>
+                        <td style=min-width:50px>7588873159</td>
+                        <td style=min-width:50px>Electronics and Electrical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Maharashtra</td>
+                        <td style=min-width:50px>Osmanabad</td>
+                        <td style=min-width:50px>Dnyaneshwar Kshirsagar</td>
+                        <td style=min-width:50px>7664835225</td>
+                        <td style=min-width:50px>Chemistry</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Maharashtra</td>
+                        <td style=min-width:50px>Nasik</td>
+                        <td style=min-width:50px>Varun Chaturmutha</td>
+                        <td style=min-width:50px>9085290672</td>
+                        <td style=min-width:50px>Physics</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Orissa</td>
+                        <td style=min-width:50px>SONEPUR</td>
+                        <td style=min-width:50px>JAYADEVA BHANJA</td>
+                        <td style=min-width:50px>8011768266</td>
+                        <td style=min-width:50px>Civil Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Punjab</td>
+                        <td style=min-width:50px>Mansa</td>
+                        <td style=min-width:50px>Rajan garg</td>
+                        <td style=min-width:50px>9957630687</td>
+                        <td style=min-width:50px>Computer Science and Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Punjab</td>
+                        <td style=min-width:50px>Chandigarh</td>
+                        <td style=min-width:50px>Dhrubojit Bhattacharya</td>
+                        <td style=min-width:50px>7896878196</td>
+                        <td style=min-width:50px>Electronics and Electrical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Punjab</td>
+                        <td style=min-width:50px>Jalandhar</td>
+                        <td style=min-width:50px>Anurag Vij</td>
+                        <td style=min-width:50px>9085284528</td>
+                        <td style=min-width:50px>Mechanical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Rajasthan</td>
+                        <td style=min-width:50px>Kota </td>
+                        <td style=min-width:50px>chetan meena</td>
+                        <td style=min-width:50px>9085734199</td>
+                        <td style=min-width:50px>Chemical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Rajasthan</td>
+                        <td style=min-width:50px>Jaipur</td>
+                        <td style=min-width:50px>Shubham Lohiya</td>
+                        <td style=min-width:50px>7791835860</td>
+                        <td style=min-width:50px>Electronics and Electrical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Rajasthan</td>
+                        <td style=min-width:50px>Nawalgarh</td>
+                        <td style=min-width:50px>Vikram kaviya</td>
+                        <td style=min-width:50px>8058007712</td>
+                        <td style=min-width:50px>Mathematics</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Rajasthan</td>
+                        <td style=min-width:50px>Nagaur</td>
+                        <td style=min-width:50px>Rajendra Choudhary</td>
+                        <td style=min-width:50px>9707</td>
+                        <td style=min-width:50px>Chemistry</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Rajasthan</td>
+                        <td style=min-width:50px>Kota</td>
+                        <td style=min-width:50px>Yashvardhan S Chauhan</td>
+                        <td style=min-width:50px>7664966360</td>
+                        <td style=min-width:50px>Design</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Rajasthan</td>
+                        <td style=min-width:50px>Gangapur City, Rajasthan</td>
+                        <td style=min-width:50px>Shreyans Jain</td>
+                        <td style=min-width:50px>9706662513</td>
+                        <td style=min-width:50px>Civil Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Rajasthan</td>
+                        <td style=min-width:50px>Jaipur</td>
+                        <td style=min-width:50px>Ayush Sharma</td>
+                        <td style=min-width:50px>9462692636</td>
+                        <td style=min-width:50px>Mathematics</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Rajasthan</td>
+                        <td style=min-width:50px>Kota</td>
+                        <td style=min-width:50px>Rajat Suri</td>
+                        <td style=min-width:50px>787784862</td>
+                        <td style=min-width:50px>Biosciences and Bioengineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Rajasthan</td>
+                        <td style=min-width:50px>kota</td>
+                        <td style=min-width:50px>Shubham Jain</td>
+                        <td style=min-width:50px>9509054333</td>
+                        <td style=min-width:50px>Physics</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Rajasthan</td>
+                        <td style=min-width:50px>Kishangarh</td>
+                        <td style=min-width:50px>Kanhaiya</td>
+                        <td style=min-width:50px>9085285852</td>
+                        <td style=min-width:50px>Computer Science and Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Rajasthan</td>
+                        <td style=min-width:50px>Jaipur</td>
+                        <td style=min-width:50px>Soumitra Agarwal</td>
+                        <td style=min-width:50px>7896878233</td>
+                        <td style=min-width:50px>Mathematics</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Rajasthan</td>
+                        <td style=min-width:50px>Jaipur</td>
+                        <td style=min-width:50px>Abhinav Gupta</td>
+                        <td style=min-width:50px>9954215323</td>
+                        <td style=min-width:50px>Mathematics</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Rajasthan</td>
+                        <td style=min-width:50px>jaipur</td>
+                        <td style=min-width:50px>Rakesh meena</td>
+                        <td style=min-width:50px>7577894875</td>
+                        <td style=min-width:50px>Electronics and Electrical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Rajasthan</td>
+                        <td style=min-width:50px>jaipur</td>
+                        <td style=min-width:50px>Lalit Yogi</td>
+                        <td style=min-width:50px>9085281851</td>
+                        <td style=min-width:50px>Mechanical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Rajasthan</td>
+                        <td style=min-width:50px>Udaipur</td>
+                        <td style=min-width:50px>Kunal Jain</td>
+                        <td style=min-width:50px>8011097003</td>
+                        <td style=min-width:50px>Computer Science and Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Rajasthan</td>
+                        <td style=min-width:50px>ajmer</td>
+                        <td style=min-width:50px>surabhi gupta</td>
+                        <td style=min-width:50px>9435661380</td>
+                        <td style=min-width:50px>Computer Science and Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Rajasthan</td>
+                        <td style=min-width:50px>Jaipur</td>
+                        <td style=min-width:50px>Mudit Agrawal</td>
+                        <td style=min-width:50px>9854648333</td>
+                        <td style=min-width:50px>Computer Science and Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Rajasthan</td>
+                        <td style=min-width:50px>Bhilwara</td>
+                        <td style=min-width:50px>Manish Regar</td>
+                        <td style=min-width:50px>9461685995</td>
+                        <td style=min-width:50px>Computer Science and Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Rajasthan</td>
+                        <td style=min-width:50px>NEEM KA THANA, SIKAR</td>
+                        <td style=min-width:50px>PANKAJ KUMAR SAINI</td>
+                        <td style=min-width:50px>9085746832</td>
+                        <td style=min-width:50px>Chemical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Rajasthan</td>
+                        <td style=min-width:50px>Jaipur</td>
+                        <td style=min-width:50px>Sunil Bandawala</td>
+                        <td style=min-width:50px>9706672567</td>
+                        <td style=min-width:50px>Civil Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Rajasthan</td>
+                        <td style=min-width:50px>Jaipur</td>
+                        <td style=min-width:50px>Ayush Sharma</td>
+                        <td style=min-width:50px>919462692636</td>
+                        <td style=min-width:50px>Mathematics</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Rajasthan</td>
+                        <td style=min-width:50px>Udaipur</td>
+                        <td style=min-width:50px>Abhishek Kanthed</td>
+                        <td style=min-width:50px>9799139234</td>
+                        <td style=min-width:50px>Design</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Rajasthan</td>
+                        <td style=min-width:50px>Didwana ,Nagour</td>
+                        <td style=min-width:50px>Norang Tetarwal</td>
+                        <td style=min-width:50px>8890135751</td>
+                        <td style=min-width:50px>Electronics and Electrical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Tamil Nadu</td>
+                        <td style=min-width:50px>Chennai</td>
+                        <td style=min-width:50px>Vishak</td>
+                        <td style=min-width:50px>9790739734</td>
+                        <td style=min-width:50px>Mechanical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Uttar Pradesh</td>
+                        <td style=min-width:50px>Kanpur</td>
+                        <td style=min-width:50px>Shobhit Gupta</td>
+                        <td style=min-width:50px>9508186243</td>
+                        <td style=min-width:50px>Mechanical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Uttar Pradesh</td>
+                        <td style=min-width:50px>Noida</td>
+                        <td style=min-width:50px>Akul Goel</td>
+                        <td style=min-width:50px>7896889289</td>
+                        <td style=min-width:50px>Mathematics</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Uttar Pradesh</td>
+                        <td style=min-width:50px>allahabad</td>
+                        <td style=min-width:50px>hemant</td>
+                        <td style=min-width:50px>9954246220</td>
+                        <td style=min-width:50px>Biosciences and Bioengineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Uttar Pradesh</td>
+                        <td style=min-width:50px>KANPUR</td>
+                        <td style=min-width:50px>SANSAR SINGH</td>
+                        <td style=min-width:50px>8723878598</td>
+                        <td style=min-width:50px>Electronics and Electrical Engineering</td>
+                        <td style=min-width:50px>M. A. / M. Des. / M. Tech. / M. Sc.</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Uttar Pradesh</td>
+                        <td style=min-width:50px>Bareilly</td>
+                        <td style=min-width:50px>Akash Rakheja</td>
+                        <td style=min-width:50px>8011494915</td>
+                        <td style=min-width:50px>Computer Science and Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Uttar Pradesh</td>
+                        <td style=min-width:50px>Lucknow</td>
+                        <td style=min-width:50px>Sumit kumar</td>
+                        <td style=min-width:50px>9085850096</td>
+                        <td style=min-width:50px>Chemical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Uttar Pradesh</td>
+                        <td style=min-width:50px>varanasi</td>
+                        <td style=min-width:50px>Deepak Kumar Mishra</td>
+                        <td style=min-width:50px>8931950742</td>
+                        <td style=min-width:50px>Chemical Engineering</td>
+                        <td style=min-width:50px>M. A. / M. Des. / M. Tech. / M. Sc.</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Uttar Pradesh</td>
+                        <td style=min-width:50px>Gorakhpur</td>
+                        <td style=min-width:50px>Adarsh Kumar</td>
+                        <td style=min-width:50px>8510887948</td>
+                        <td style=min-width:50px>Humanities and Social Sciences</td>
+                        <td style=min-width:50px>M. A. / M. Des. / M. Tech. / M. Sc.</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Uttar Pradesh</td>
+                        <td style=min-width:50px>Lucknow</td>
+                        <td style=min-width:50px>Manas Daruka</td>
+                        <td style=min-width:50px>9453370305</td>
+                        <td style=min-width:50px>Mathematics</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Uttar Pradesh</td>
+                        <td style=min-width:50px>Noida</td>
+                        <td style=min-width:50px>Abhishek Kumar</td>
+                        <td style=min-width:50px>7577894878</td>
+                        <td style=min-width:50px>Computer Science and Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Uttar Pradesh</td>
+                        <td style=min-width:50px>Agra</td>
+                        <td style=min-width:50px>Atulya Jain</td>
+                        <td style=min-width:50px>8011036307</td>
+                        <td style=min-width:50px>Physics</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Uttar Pradesh</td>
+                        <td style=min-width:50px>Meerut</td>
+                        <td style=min-width:50px>Sarthak Sharma</td>
+                        <td style=min-width:50px>8011033273</td>
+                        <td style=min-width:50px>Biosciences and Bioengineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Uttar Pradesh</td>
+                        <td style=min-width:50px>ghaziabad</td>
+                        <td style=min-width:50px>himanshu kumar</td>
+                        <td style=min-width:50px>9085215088</td>
+                        <td style=min-width:50px>Civil Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Uttar Pradesh</td>
+                        <td style=min-width:50px>Kanpur</td>
+                        <td style=min-width:50px>Aditya Gupta</td>
+                        <td style=min-width:50px>8399056141</td>
+                        <td style=min-width:50px>Mathematics</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Uttar Pradesh</td>
+                        <td style=min-width:50px>LUCKNOW</td>
+                        <td style=min-width:50px>PRASHANT KUMAR</td>
+                        <td style=min-width:50px>7086789039</td>
+                        <td style=min-width:50px>Computer Science and Engineering</td>
+                        <td style=min-width:50px>M. A. / M. Des. / M. Tech. / M. Sc.</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Uttar Pradesh</td>
+                        <td style=min-width:50px>Varanasi</td>
+                        <td style=min-width:50px>Shubham</td>
+                        <td style=min-width:50px>8721864595</td>
+                        <td style=min-width:50px>Mechanical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Uttar Pradesh</td>
+                        <td style=min-width:50px>HAPUR</td>
+                        <td style=min-width:50px>PRASHANT GAUTAM</td>
+                        <td style=min-width:50px>9954250607</td>
+                        <td style=min-width:50px>Electronics and Electrical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Uttar Pradesh</td>
+                        <td style=min-width:50px>Lakhimpur Kheri</td>
+                        <td style=min-width:50px>Ashutosh Gupta</td>
+                        <td style=min-width:50px>9859917975</td>
+                        <td style=min-width:50px>Biosciences and Bioengineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Uttar Pradesh</td>
+                        <td style=min-width:50px>Bareilly</td>
+                        <td style=min-width:50px>Aishwarya Agarwal</td>
+                        <td style=min-width:50px>8011022139</td>
+                        <td style=min-width:50px>Computer Science and Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Uttar Pradesh</td>
+                        <td style=min-width:50px>Lucknow</td>
+                        <td style=min-width:50px>Vaibhav Saxena</td>
+                        <td style=min-width:50px>8486720106</td>
+                        <td style=min-width:50px>Mathematics</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Uttar Pradesh</td>
+                        <td style=min-width:50px>Faizabad</td>
+                        <td style=min-width:50px>Gaurav Verma</td>
+                        <td style=min-width:50px>7896892353</td>
+                        <td style=min-width:50px>Civil Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Uttaranchal</td>
+                        <td style=min-width:50px>Dehradun</td>
+                        <td style=min-width:50px>Naveen Tripathi</td>
+                        <td style=min-width:50px>7896889026</td>
+                        <td style=min-width:50px>Mechanical Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>3</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>West Bengal</td>
+                        <td style=min-width:50px>kolkata</td>
+                        <td style=min-width:50px>Subrata Patra</td>
+                        <td style=min-width:50px>9609125205</td>
+                        <td style=min-width:50px>Chemistry</td>
+                        <td style=min-width:50px>M. A. / M. Des. / M. Tech. / M. Sc.</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>West Bengal</td>
+                        <td style=min-width:50px>Durgapur</td>
+                        <td style=min-width:50px>Arindam Chowdhury</td>
+                        <td style=min-width:50px>9954245565</td>
+                        <td style=min-width:50px>Electronics and Electrical Engineering</td>
+                        <td style=min-width:50px>M. A. / M. Des. / M. Tech. / M. Sc.</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>West Bengal</td>
+                        <td style=min-width:50px>Kolkata</td>
+                        <td style=min-width:50px>Niladri Bhattacharya</td>
+                        <td style=min-width:50px>9085411675</td>
+                        <td style=min-width:50px>Electronics and Electrical Engineering</td>
+                        <td style=min-width:50px>M. A. / M. Des. / M. Tech. / M. Sc.</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>West Bengal</td>
+                        <td style=min-width:50px>Kolkata</td>
+                        <td style=min-width:50px>Nikit Begwani</td>
+                        <td style=min-width:50px>8011028326</td>
+                        <td style=min-width:50px>Computer Science and Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>West Bengal</td>
+                        <td style=min-width:50px>West Bengal</td>
+                        <td style=min-width:50px>Rakesh Jana</td>
+                        <td style=min-width:50px>9614735067</td>
+                        <td style=min-width:50px>Mathematics</td>
+                        <td style=min-width:50px>M. A. / M. Des. / M. Tech. / M. Sc.</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>West Bengal</td>
+                        <td style=min-width:50px>Kolkata</td>
+                        <td style=min-width:50px>sarbajeet dutta</td>
+                        <td style=min-width:50px>7035902459</td>
+                        <td style=min-width:50px>Biosciences and Bioengineering</td>
+                        <td style=min-width:50px>M. A. / M. Des. / M. Tech. / M. Sc.</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>West Bengal</td>
+                        <td style=min-width:50px>kolkata</td>
+                        <td style=min-width:50px>Sourav Das</td>
+                        <td style=min-width:50px>8961265407</td>
+                        <td style=min-width:50px>Civil Engineering</td>
+                        <td style=min-width:50px>M. A. / M. Des. / M. Tech. / M. Sc.</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>West Bengal</td>
+                        <td style=min-width:50px>Calcutta</td>
+                        <td style=min-width:50px>Keshav Kothari</td>
+                        <td style=min-width:50px>8011036223</td>
+                        <td style=min-width:50px>Civil Engineering</td>
+                        <td style=min-width:50px>B. Tech / B. Des</td>
+                        <td style=min-width:50px>4</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>West Bengal</td>
+                        <td style=min-width:50px>Kolkata</td>
+                        <td style=min-width:50px>Sanjeev</td>
+                        <td style=min-width:50px>8697972233</td>
+                        <td style=min-width:50px>Mechanical Engineering</td>
+                        <td style=min-width:50px>M. A. / M. Des. / M. Tech. / M. Sc.</td>
+                        <td style=min-width:50px>2</td>
+                    </tr>
+				</tbody>
+                </table>
+		</div>
+    </div><!--/.container-->
+</section><!--/#feature-->

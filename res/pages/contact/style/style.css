@@ -1,0 +1,80 @@
+/* CSS Document */
+
+html {
+	height:100%;
+}
+
+html, body {
+	margin:0;
+	padding:0;
+        font-family: lato;
+	font-size:18px;
+	color:#000000;
+}
+.red-star:after {
+  content:"*";
+  color:red;
+  font-size:0.7em;
+}
+::-webkit-input-placeholder {
+   opacity: 0.3;
+   color:#000000;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   opacity: 0.3; 
+   color:#000000; 
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   opacity: 0.3; 
+   color:#000000; 
+}
+
+:-ms-input-placeholder {  
+   opacity: 0.3; 
+   color:#000000; 
+}
+h1 {
+	font-size:48px;
+	color:#000;
+	font-weight:normal;
+	font-family: 'Lato';
+	padding-bottom:5px;
+	text-align:center;
+}
+@media (min-width:921px){
+	#main {
+		margin:0 auto;
+		width:95%;
+		min-width:900px;
+		position:relative;
+	}
+	#error  {
+	    background: red;
+	    position: absolute;
+	    top: 155px;
+	    right: 0;
+	    color: #fff;
+	    padding: 8px 15px;
+	    font-size: 20px;
+	    margin-right: 42%;
+	}
+	#success  {
+	    background: green;
+	    position: absolute;
+	    top: 185px;
+	    right: 0;
+	    color: #fff;
+	    padding: 8px 30px;
+	    font-size: 20px;
+	    margin-right: 36.5%;
+	}
+}
+#note,
+#error {
+	display:none;
+}
+#success {
+	display:none;
+}
